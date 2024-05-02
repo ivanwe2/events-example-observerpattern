@@ -1,4 +1,6 @@
-﻿using EventsExample_ObserverPattern.Observers;
+﻿using EventsExample_ObserverPattern.Abstractions;
+using EventsExample_ObserverPattern.Models;
+using EventsExample_ObserverPattern.Observers;
 using EventsExample_ObserverPattern.Observers.Base;
 using EventsExample_ObserverPattern.Providers;
 
@@ -9,10 +11,10 @@ namespace EventsExample_ObserverPattern
         static void Main(string[] args)
         {
             TemperatureMonitor temperatureMonitor = new TemperatureMonitor();
-            InternalTermometer internalTermometer = new InternalTermometer();
-            ExternalTermometer externalTermometer = new ExternalTermometer();
+            var internalTermometer = new InternalTermometer();
+            var externalTermometer = new ExternalTermometer();
 
-            temperatureMonitor.TestFunctionality(new List<TemperatureObserverBase> { internalTermometer, externalTermometer});
+            temperatureMonitor.TestFunctionality(new List<ICustomObserver<Temperature>>() { internalTermometer, externalTermometer});
         }
     }
 }

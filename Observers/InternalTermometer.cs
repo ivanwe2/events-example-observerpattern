@@ -11,7 +11,7 @@ namespace EventsExample_ObserverPattern.Observers
     /// <summary>
     /// An Internal Temperature monitor that produces output for the temperature and the change from the previous.
     /// </summary>
-    public class InternalTermometer : TemperatureObserverBase
+    public class InternalTermometer : ObserverBase<Temperature>
     {
         private bool _isFirst = true;
         private Temperature _last;

@@ -12,7 +12,7 @@ namespace EventsExample_ObserverPattern.Observers
     /// <summary>
     /// An external service that writes to an externalReport  text file in the bin folder.
     /// </summary>
-    public class ExternalTermometer : TemperatureObserverBase
+    public class ExternalTermometer : ObserverBase<Temperature>
     {
         public override void OnCompleted()
         {

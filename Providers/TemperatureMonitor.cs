@@ -1,4 +1,5 @@
-﻿using EventsExample_ObserverPattern.Extensions;
+﻿using EventsExample_ObserverPattern.Abstractions;
+using EventsExample_ObserverPattern.Extensions;
 using EventsExample_ObserverPattern.Models;
 using EventsExample_ObserverPattern.Observers;
 using EventsExample_ObserverPattern.Observers.Base;
@@ -48,7 +49,7 @@ namespace EventsExample_ObserverPattern.Providers
 
             _observers.Clear();
         }
-        public void TestFunctionality(List<TemperatureObserverBase> observers)
+        public void TestFunctionality(List<ICustomObserver<Temperature>> observers)
         {
             foreach (var observer in observers)
             {
